@@ -9,7 +9,7 @@ const {
 } = require("../Repository/User.Repo");
 const ApiError = require("../Utils/ApiError.Utils");
 const { asyncHandler } = require("../Utils/AsyncHandler.Utils");
-const {generateTokens} = require("../Repository/GenerateToken.Repository");
+const { generateTokens } = require("../Repository/GenerateToken.Repository");
 
 exports.createStudent = async (studentData) => {
   const student = await create_Student(studentData);
@@ -125,3 +125,4 @@ exports.login_admin = async (loginData) => {
     throw new ApiError(403, "could not generate tokens");
   }
 };
+

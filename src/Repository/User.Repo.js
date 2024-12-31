@@ -87,3 +87,4 @@ exports.find_admin_By_id = async (id, role) => {
     throw new ApiError(403, "could not find the admin document");
   }
 };
+

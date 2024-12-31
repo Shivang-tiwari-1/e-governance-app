@@ -7,60 +7,76 @@ const document_Schema = new mongoose.Schema(
       required: true,
       ref: "Student",
     },
-    SSC_Marks_sheet: {
+    appllying_for: {
       type: String,
+      enum: [
+        "SSC",
+        "HSC",
+        "First-year",
+        "Second-year",
+        "Third-year",
+        "Fourth-year",
+        "Fifth-year",
+        "Sixth-year",
+        "Seventh+year",
+        "Eighth-year",
+      ],
+      required: true,
+    },
+    SSC_Marks_sheet: {
+      type: Buffer,
       required: true,
     },
     HSC_Marks_Sheeet: {
-      type: String,
+      type: Buffer,
       required: true,
     },
     SSC_Leaving_Certificate: {
-      type: String,
+      type: Buffer,
       required: true,
     },
     HSC_Leaving_Certificate: {
-      type: String,
+      type: Buffer,
       required: true,
     },
     certificate_Por_Physically_challanged: {
-      type: String,
+      type: Buffer,
     },
     elgibility_form: {
-      type: String,
+      type: Buffer,
     },
     semester1_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester2_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester3_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester4_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester5_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester6_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester7_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     semester8_MarlsSheet: {
-      type: String,
+      type: Buffer,
     },
     yuva_raksha_form: {
-      type: String,
+      type: Buffer,
     },
     adhaar_card: {
-      type: String,
+      type: Buffer,
     },
     electricity_Bill: {
-      type: String,
+      type: Buffer,
       required: true,
     },
   },

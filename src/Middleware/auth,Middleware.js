@@ -2,10 +2,12 @@ const {
   find_student_by_id,
   find_admin_By_id,
 } = require("../Repository/User.Repo");
+const ApiError = require("../Utils/ApiError.Utils");
+const { asyncHandler } = require("../Utils/AsyncHandler.Utils");
 
 exports.authentication = asyncHandler(async (req, res, next) => {
+  console.log("|");
   console.log("|authentication starts|");
-
   const authHeader = req.headers.authorization || req.headers.Authorization;
   let tokenFromHeader = authHeader?.startsWith("Bearer ")
     ? authHeader.split(" ")[1]
@@ -46,5 +48,22 @@ exports.authentication = asyncHandler(async (req, res, next) => {
   }
   req.user = data;
   console.log("|authentication end|");
+  console.log("|");
   next();
+});
+
+exports.authority = asyncHandler(async (req, res, next) => {
+  console.log("|");
+  console.log("CHEKING AUTHORITY-STARTS");
+  const admin = await find_admin_By_id(req.user.id);
+  if (admin) {
+    if (admin.role !== "Admission Officer") {
+      throw new ApiError(500, "you are not allowed");
+    }
+  } else {
+    throw new ApiError(403, "bad request");
+  }
+
+  console.log("|");
+  console.log("CHEKING AUTHORITY-STARTS");
 });
