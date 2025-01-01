@@ -25,7 +25,14 @@
     "mongoose-aggregate-paginate-v2": "^1.1.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "node-geocode": "^0.2.0",
+    "node-gyp": "^11.0.0",
     "nodemon": "^3.1.9",
+    "tesseract.js": "^5.1.1",
+    "tr46": "^5.0.0",
     "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "node-addon-api": "^8.3.0"
   }
 }

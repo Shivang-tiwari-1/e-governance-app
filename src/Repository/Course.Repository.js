@@ -10,6 +10,7 @@ exports.find_course = async (id) => {
     throw new ApiError(403, "could not  find the course");
   }
 };
+
 exports.find_course_by_name = async (name) => {
   const finding_course = await Course.findOne({ name: name });
   if (finding_course) {
@@ -19,10 +20,11 @@ exports.find_course_by_name = async (name) => {
   }
 };
 
-exports.create_course = async (name, duration, currency, amount) => {
+exports.create_course = async (name, duration, currency, amount, cutoff) => {
   const create_corse = await Course.create({
     name: name,
     duration: duration,
+    cutoff: cutoff,
     feeStructure: {
       currency: currency,
       amount: amount,

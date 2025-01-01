@@ -11,3 +11,7 @@ exports.get_courses = asyncHandler(async (req, res) => {
       .json(new ApiResponse(200, getting_All_corses, "courses fetched"));
   }
 });
+
+exports.validate_course = asyncHandler(async (req, res) => {
+  
+});

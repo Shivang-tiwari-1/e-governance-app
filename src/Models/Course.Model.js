@@ -11,6 +11,7 @@ const courseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    cutoff: { type: String, required: true },
     feeStructure: {
       currency: {
         type: String,
